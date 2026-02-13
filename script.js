@@ -443,8 +443,8 @@ function startReactionGame() {
     const targetScore = 6;
     const maxMisses = 3;
 
-    let heartDuration = 800; // starts fast
-    const minDuration = 500; // fastest it can go
+    let heartDuration = 500; // starts fast
+    const minDuration = 200; // fastest it can go
 
     const status = document.createElement("p");
     status.style.textAlign = "center";
@@ -526,7 +526,7 @@ function startFinalGame() {
 
     let misses = 0;
     const maxMisses = 3;
-    const maxSpeed = 4;
+    const maxSpeed = 5;
     let progressIndex = 0;
     let letters = [];
     const letterSize = 25;
@@ -561,7 +561,7 @@ function startFinalGame() {
         letters.push({
             x: Math.random() * (canvas.width - letterSize),
             y: -letterSize,
-            speed: Math.min(2 + progressIndex * 0.3, maxSpeed),
+            speed: Math.min(4 + progressIndex * 0.3, maxSpeed),
             char: getRandomLetter()
         });
     }
@@ -660,6 +660,7 @@ function startFinalGame() {
 
     update();
 }
+
 
 
 
