@@ -462,23 +462,31 @@ function startReactionGame() {
             return;
         }
 
+        const heartWrapper = document.createElement("div");
+        heartWrapper.style.position = "absolute";
+        heartWrapper.style.width = "100px";   // invisible hitbox width
+        heartWrapper.style.height = "100px";  // invisible hitbox height
+        heartWrapper.style.display = "flex";
+        heartWrapper.style.alignItems = "center";
+        heartWrapper.style.justifyContent = "center";
+        heartWrapper.style.cursor = "pointer";
+        
         const heart = document.createElement("div");
         heart.textContent = "💖";
-        heart.style.position = "absolute";
         heart.style.fontSize = "40px";
-        heart.style.cursor = "pointer";
         heart.style.userSelect = "none";
-        heart.style.padding = "50px";
+        
+        heartWrapper.appendChild(heart);
 
 
-        heart.style.left = Math.random() * 85 + "%";
-        heart.style.top = Math.random() * 80 + "%";
+        heartWrapper.style.left = Math.random() * 80 + "%";
+        heartWrapper.style.top = Math.random() * 70 + "%";
+        container.appendChild(heartWrapper);
 
-        container.appendChild(heart);
 
         let clicked = false;
 
-        heart.addEventListener("click", () => {
+        heartWrapper.addEventListener("click", () => {
             clicked = true;
             score++;
 
@@ -486,7 +494,7 @@ function startReactionGame() {
             heartDuration = Math.max(minDuration, heartDuration - 40);
 
             status.textContent = `Hearts: ${score} | Misses: ${misses}`;
-            heart.remove();
+            heartWrapper.remove();
 
             setTimeout(spawnHeart, 250);
         });
@@ -495,7 +503,7 @@ function startReactionGame() {
             if (!clicked) {
                 misses++;
                 status.textContent = `Hearts: ${score} | Misses: ${misses}`;
-                heart.remove();
+                heartWrapper.remove();
                 setTimeout(spawnHeart, 250);
             }
         }, heartDuration);
@@ -660,6 +668,7 @@ function startFinalGame() {
 
     update();
 }
+
 
 
 
