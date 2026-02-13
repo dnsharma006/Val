@@ -534,7 +534,7 @@ function startFinalGame() {
 
     let misses = 0;
     const maxMisses = 3;
-    const maxSpeed = 5;
+    const maxSpeed = 4;
     let progressIndex = 0;
     let letters = [];
     const letterSize = 25;
@@ -569,7 +569,7 @@ function startFinalGame() {
         letters.push({
             x: Math.random() * (canvas.width - letterSize),
             y: -letterSize,
-            speed: Math.min(4 + progressIndex * 0.3, maxSpeed),
+            speed: Math.min(6 + progressIndex * 0.3, maxSpeed),
             char: getRandomLetter()
         });
     }
@@ -668,6 +668,7 @@ function startFinalGame() {
 
     update();
 }
+
 
 
 
