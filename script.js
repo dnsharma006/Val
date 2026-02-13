@@ -443,8 +443,8 @@ function startReactionGame() {
     const targetScore = 6;
     const maxMisses = 3;
 
-    let heartDuration = 500; // starts fast
-    const minDuration = 200; // fastest it can go
+    let heartDuration = 570; // starts fast
+    const minDuration = 300; // fastest it can go
 
     const status = document.createElement("p");
     status.style.textAlign = "center";
@@ -468,7 +468,7 @@ function startReactionGame() {
         heart.style.fontSize = "40px";
         heart.style.cursor = "pointer";
         heart.style.userSelect = "none";
-        heart.style.padding = "20px";
+        heart.style.padding = "50px";
 
 
         heart.style.left = Math.random() * 85 + "%";
@@ -660,6 +660,7 @@ function startFinalGame() {
 
     update();
 }
+
 
 
 
