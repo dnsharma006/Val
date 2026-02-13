@@ -443,8 +443,8 @@ function startReactionGame() {
     const targetScore = 6;
     const maxMisses = 3;
 
-    let heartDuration = 570; // starts fast
-    const minDuration = 300; // fastest it can go
+    let heartDuration = 650; // starts fast
+    const minDuration = 420; // fastest it can go
 
     const status = document.createElement("p");
     status.style.textAlign = "center";
@@ -660,6 +660,7 @@ function startFinalGame() {
 
     update();
 }
+
 
 
 
